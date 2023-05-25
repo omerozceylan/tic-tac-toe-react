@@ -1,27 +1,7 @@
-export default function Square() {
+export default function Square({value}) {
     return (
         <>
-            <div className="board-row">
-                <button className="square">X</button>
-                <button className="square">X</button>
-                <button className="square">X</button>
-            </div>
-            <div className="board-row">
-                <button className="square">X</button>
-                <button className="square">X</button>
-                <button className="square">X</button>
-            </div>
-            <div className="board-row">
-                <button className="square">X</button>
-                <button className="square">X</button>
-                <button className="square">X</button>
-            </div>
-            
-            
-            
-            
-            
-            
+            <button className="square">{value}</button>
         </>
     )
 }

@@ -3,9 +3,13 @@
 }
 
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: sans-serif;
   margin: 20px;
   padding: 0;
+  height: 100vh;
 }
 
 h1 {
@@ -67,9 +71,11 @@ body {
   height: 34px;
   margin-right: -1px;
   margin-top: -1px;
+  color: black;
   padding: 0;
   text-align: center;
   width: 34px;
+  outline: none;
 }
 
 .board-row:after {
