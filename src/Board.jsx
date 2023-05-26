@@ -8,6 +8,7 @@ export default function Board() {
     
     function handleClick(index){
         const nextSquares = squares.slice()
+        if(nextSquares[index])return
         if(xIsNext){
             nextSquares[index] = 'X'
         }else {
