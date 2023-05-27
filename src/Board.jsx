@@ -16,8 +16,15 @@ export default function Board() {
           [0, 4, 8],
           [2, 4, 6]
         ];
-    
-        
+
+        for(let i=0; i<lines.length; i++){
+            const [a,b,c] = lines[i]
+            if(squares[a] && squares[b] && squares[c]){
+                console.log('yeterli öge yok. ' + i)
+            }
+            
+        }
+
     }
 
     function handleClick(index){
@@ -33,7 +40,7 @@ export default function Board() {
     }
 
     useEffect(()=>{
-        console.log(squares)
+
     },[])
 
     return (
@@ -53,7 +60,7 @@ export default function Board() {
                 <Square value={squares[7]}onSquareClick={()=> handleClick(7)}></Square>
                 <Square value={squares[8]}onSquareClick={()=> handleClick(8)}></Square>
             </div>
-            
+            <button onClick={calculateWinner(squares)}>Winner?</button>
         </>
     )
 }
