@@ -28,6 +28,9 @@ export default function Board() {
     }
 
     function handleClick(index){
+        if(calculateWinner(squares)){
+            return
+        }
         const nextSquares = squares.slice()
         if(nextSquares[index])return
         if(xIsNext){
@@ -45,6 +48,9 @@ export default function Board() {
 
     return (
         <>
+            <div className="status">
+                {status}
+            </div>
             <div className="board-row">
                 <Square value={squares[0]} onSquareClick={()=> handleClick(0)}></Square>
                 <Square value={squares[1]} onSquareClick={()=> handleClick(1)}></Square>
@@ -60,7 +66,7 @@ export default function Board() {
                 <Square value={squares[7]}onSquareClick={()=> handleClick(7)}></Square>
                 <Square value={squares[8]}onSquareClick={()=> handleClick(8)}></Square>
             </div>
-            <button onClick={()=>calculateWinner(squares)}>Winner?</button>
+
         </>
     )
 }
