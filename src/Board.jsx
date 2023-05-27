@@ -60,7 +60,7 @@ export default function Board() {
                 <Square value={squares[7]}onSquareClick={()=> handleClick(7)}></Square>
                 <Square value={squares[8]}onSquareClick={()=> handleClick(8)}></Square>
             </div>
-            <button onClick={calculateWinner(squares)}>Winner?</button>
+            <button onClick={()=>calculateWinner(squares)}>Winner?</button>
         </>
     )
 }
