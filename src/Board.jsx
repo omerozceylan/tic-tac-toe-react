@@ -20,11 +20,11 @@ export default function Board() {
         for(let i=0; i<lines.length; i++){
             const [a,b,c] = lines[i]
             if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c]){
-                console.log('WINNER' + i)
+                return squares[a]
             }
             
         }
-
+        return null
     }
 
     function handleClick(index){
