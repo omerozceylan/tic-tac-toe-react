@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react"
 import Square from "./square"
 
-export default function Board() {
-    const [xIsNext, setXIsNext] = useState(true)
-    const [squares, setSquares] = useState(Array(9).fill(null))
-    
+export default function Board({xIsNext, squares, onPlay}) {    
     const winner = calculateWinner(squares)
     let status
     if(winner){
@@ -47,8 +44,7 @@ export default function Board() {
         }else {
             nextSquares[index] = 'O'
         }
-        setSquares(nextSquares)
-        setXIsNext(!xIsNext)
+        onPlay(nextSquares)
     }
 
     useEffect(()=>{
