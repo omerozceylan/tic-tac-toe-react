@@ -3,14 +3,15 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Board from './Board'
 import './App.css'
+import Game from './Game'
 
 function App() {
   
   return (
     <>
       
-       <Board>
-       </Board>
+       <Game>
+       </Game>
 
     </>
   )
