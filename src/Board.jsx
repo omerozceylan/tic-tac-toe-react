@@ -21,8 +21,7 @@ export default function Board({xIsNext, squares, onPlay}) {
           [2, 5, 8],
           [0, 4, 8],
           [2, 4, 6]
-        ];
-
+        ]; 
         for(let i=0; i<lines.length; i++){
             const [a,b,c] = lines[i]
             if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c]){
@@ -35,20 +34,24 @@ export default function Board({xIsNext, squares, onPlay}) {
 
     function handleClick(index){
         if(calculateWinner(squares)){
+            console.log('return happend')
             return
         }
         const nextSquares = squares.slice()
-        if(nextSquares[index])return
+        if(nextSquares[index]) {
+            return
+        }
         if(xIsNext){
             nextSquares[index] = 'X'
         }else {
             nextSquares[index] = 'O'
         }
+        // console.log(nextSquares)
         onPlay(nextSquares)
     }
 
     useEffect(()=>{
-
+        // console.log(squares)
     },[])
 
     return (
