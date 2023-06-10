@@ -10,8 +10,28 @@ export default function Game() {
         // console.log(nextSquares)
         setHistory([...history, nextSquares])
         setXIsNext(!xIsNext)
-        console.log(history)
     }
+
+    function jumpTo(nextMove) {
+
+    }
+
+    const moves = history.map((squares, move) => {
+        let description
+        if (move > 0) {
+            description = 'Go to move #' + move;
+        } else {
+            description = 'Go to game start'
+        }
+
+        return (
+            <li key={move}>
+                <button onClick={()=> jumpTo(move)}>{description}</button>
+            </li>
+        )
+    }
+    
+    )
 
     return (
         <>
@@ -20,7 +40,7 @@ export default function Game() {
                 <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
             </div>
             <div className="game-info">
-                <ol>{/*TODO*/}</ol>
+                <ol>{moves}</ol>
             </div>
         </div>
         </>
